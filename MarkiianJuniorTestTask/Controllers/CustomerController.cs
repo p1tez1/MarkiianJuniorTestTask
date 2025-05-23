@@ -114,6 +114,30 @@ namespace API.Controllers
                 return StatusCode(500, "An error occurred while processing your request.");
             }
         }
+        [HttpGet("only-matched-customer-othewise", Name = "GetMatchedCustomerAndPostIntoMathcedCustomer")]
+        public async Task<IActionResult> GetMatchedCustomerOtherwise()
+        {
+            _logger.LogInformation("Request received: GetMatchedCustomer");
+
+            try
+            {
+                var matchedCustomer = await _mediator.Send(new GetOnlyMatchedCustomerQueryOtherwise());
+
+                if (matchedCustomer == null || !matchedCustomer.Any())
+                {
+                    _logger.LogWarning("No matched customers found.");
+                    return NotFound("No matched customers found.");
+                }
+
+                _logger.LogInformation("Matched customers retrieved: {Count}", matchedCustomer.Count());
+                return Ok(matchedCustomer);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while retrieving matched customers.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
     }
 }
 

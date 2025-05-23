@@ -67,5 +67,8 @@
     <Build Include="StoredProcedure\GetOverlappingTvProducts.sql" />
     <Build Include="Entity\MatchedCustomers.sql" />
     <Build Include="StoredProcedure\PostMatchedCustomer.sql" />
+    <Build Include="StoredProcedure\FindMatchedCustomer.sql" />
+    <Build Include="StoredProcedure\GetMatchedCustomer.sql" />
+    <Build Include="StoredProcedure\FindAndPostMatchedCustomers.sql" />
   </ItemGroup>
 </Project>

@@ -11,5 +11,6 @@ namespace DAL.Interfaces
         Task<IEnumerable<MatchedCustomerModel>> FindMatchedCustomer();
         Task PostMatchedCustomersAsync(IEnumerable<MatchedCustomerModel> models);
         Task<IEnumerable<MatchedCustomerModel>> GetMatchedCustomer();
+        Task<IEnumerable<MatchedCustomerModel>> FindAndPostMatchedCustomersAsync();
     }
 }

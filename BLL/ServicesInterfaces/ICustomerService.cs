@@ -9,5 +9,6 @@ namespace BLL.ServicesInterfaces
         Task<IEnumerable<CustomerModel>> GetOnlyDslCustomerAsync();
         Task<IEnumerable<OverlappingTvProductsModel>> GetOverlappingTvProducts();
         Task<IEnumerable<MatchedCustomerModel>> GetMatchedCustomer();
+        Task<IEnumerable<MatchedCustomerModel>> GetMatchedCustomerOtherwise();
     }
 }

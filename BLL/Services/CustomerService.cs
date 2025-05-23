@@ -33,5 +33,9 @@ namespace BLL.Services
             await _customerRepository.PostMatchedCustomersAsync(matchedForPost);
             return await _customerRepository.GetMatchedCustomer();
         }
+        public async Task<IEnumerable<MatchedCustomerModel>> GetMatchedCustomerOtherwise()
+        {
+            return await _customerRepository.FindAndPostMatchedCustomersAsync();
+        }
     }
 }
